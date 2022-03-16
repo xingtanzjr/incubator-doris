@@ -331,7 +331,7 @@ public class Analyzer {
 
     // An analyzer stores analysis state for a single select block. A select block can be
     // a top level select statement, or an inline view select block.
-    // ancestors contains the Analyzers of the enclosing select blocks of 'this'
+    // ancestors contain the Analyzers of the enclosing select blocks of 'this'
     // (ancestors[0] contains the immediate parent, etc.).
     private final ArrayList<Analyzer> ancestors;
 
@@ -461,7 +461,7 @@ public class Analyzer {
     }
 
     /**
-     * Creates an returns an empty TupleDescriptor for the given table ref and registers
+     * Creates and returns an empty TupleDescriptor for the given table ref and registers
      * it against all its legal aliases. For tables refs with an explicit alias, only the
      * explicit alias is legal. For tables refs with no explicit alias, the fully-qualified
      * and unqualified table names are legal aliases. Column references against unqualified
@@ -512,7 +512,7 @@ public class Analyzer {
     }
 
     /**
-     * Create an new tuple descriptor for the given table, register all table columns.
+     * Create a new tuple descriptor for the given table, register all table columns.
      * Using this method requires external table read locks in advance.
      */
     public TupleDescriptor registerOlapTable(Table table, TableName tableName, List<String> partitions) {
